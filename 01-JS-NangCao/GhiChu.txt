@@ -1,0 +1,8 @@
++ Object: =>
+	var user = {
+		key : 'value'
+	}
++ Map: => Có Key có thẻ là 1 đối tượng.
+	var user = {
+		{key} : 'value'
+	}
