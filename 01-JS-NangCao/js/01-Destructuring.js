@@ -6,7 +6,6 @@ let user = {
         block: 3,
         number: '27/1'
     }
-
 }
 // const firstname = user.firstname;
 // const lastname = user.lastname;

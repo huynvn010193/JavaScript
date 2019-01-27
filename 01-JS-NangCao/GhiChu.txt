@@ -6,3 +6,11 @@
 	var user = {
 		{key} : 'value'
 	}
+06/07/2018: 
+  + Callback: bỏ 1 function A vô 1 function B
+	Func B chạy xong nhớ gọi lai hàm A
+01/08/2018:
+  + reduce((accmalator, currentValue)
+    - accmalator : nơi chứa KQ return, lúc đầu thì là giá trị ban đầu của mảng
+    - currentValue: 
+
