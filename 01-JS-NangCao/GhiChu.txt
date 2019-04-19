@@ -14,3 +14,7 @@
     - accmalator : nơi chứa KQ return, lúc đầu thì là giá trị ban đầu của mảng
     - currentValue: 
 
+
+19/04/2018
+	+ Chaining Promise
+	+ Promise miêu tả 1 hành động Asynchronous trong tương lai mà ta chưa biết trc kết quả trả ra là gì !
