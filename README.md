@@ -8,3 +8,5 @@ https://anonystick.com/blog-developer/24-code-trong-es6-su-dung-thuong-xuyen-tro
 
 Prototype Javascript: là cơ chế mà các object trong javascript kế thừa các tính năng từ một object khác.
 https://viblo.asia/p/prototype-trong-javascript-hoat-dong-nhu-the-nao-RQqKLYXOZ7z
+
+Câu hỏi PV tiếng anh: https://dev.to/suprabhasupi/frontend-interview-questions-23o4?fbclid=IwAR1sU_C-toyYIlye46oICYTWWDRlsT86UHK-axW_WHoE7k_Rifb_QpmM5FU
