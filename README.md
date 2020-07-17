@@ -10,3 +10,6 @@ Prototype Javascript: là cơ chế mà các object trong javascript kế thừa
 https://viblo.asia/p/prototype-trong-javascript-hoat-dong-nhu-the-nao-RQqKLYXOZ7z
 
 Câu hỏi PV tiếng anh: https://dev.to/suprabhasupi/frontend-interview-questions-23o4?fbclid=IwAR1sU_C-toyYIlye46oICYTWWDRlsT86UHK-axW_WHoE7k_Rifb_QpmM5FU
+
+Reducer
+https://viblo.asia/p/reduce-javascript-Eb85oxW0K2G
