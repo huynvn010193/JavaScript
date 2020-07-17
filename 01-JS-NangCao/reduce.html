@@ -1,94 +1,107 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Title of the document</title>
-</head>
-<script>
-	iqTest = (accumalator,currentValue) => {
-		console.log(`accumalator: ${accumalator} - currentValue: ${currentValue}`);
-		return accumalator + currentValue;
-	}
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title of the document</title>
+  </head>
+  <script>
+    iqTest = (accumalator, currentValue) => {
+      console.log(
+        `accumalator: ${accumalator} - currentValue: ${currentValue}`
+      );
+      return accumalator + currentValue;
+    };
 
-	function runABC() {
-		console.log('===========================Tương tác vs arr==============================');
-		// Tương tác vs arr
+    function runABC() {
+      console.log(
+        "===========================Tương tác vs arr=============================="
+      );
+      // Tương tác vs arr
 
-		const numberArr = [1,22,9,4];
-		const a = numberArr.reduce(iqTest,0);
-		console.log(a);
+      const numberArr = [1, 22, 9, 4];
+      const a = numberArr.reduce(iqTest, 0);
+      console.log(a);
 
-		console.log("===========================Ứng dụng tìm FindMax============================");
-		// const findMax = numberArr.reduce((acc,val) => {
-		// 	if(val > acc) {
-		// 		acc = val
-		// 	}
-		// 	return acc;
-		// });
+      console.log(
+        "===========================Ứng dụng tìm FindMax============================"
+      );
+      // const findMax = numberArr.reduce((acc,val) => {
+      // 	if(val > acc) {
+      // 		acc = val
+      // 	}
+      // 	return acc;
+      // });
 
-		let findMax = numberArr.reduce((a, b) => a > b ? a : b);
+      let findMax = numberArr.reduce((a, b) => (a > b ? a : b));
 
-		console.log(findMax);
+      console.log(findMax);
 
-		// Tương tác vs arrObject
-		console.log('===========================Tương tác vs arrObject==============================');
-		const arrObject = [
-			{
-				name: 'ABC',
-			},
-			{
-				job: 'CEO',
-			},
-			{
-				age: 30
-			}
-		]
+      // Tương tác vs arrObject
+      console.log(
+        "===========================Tương tác vs arrObject=============================="
+      );
 
-		const newObj = arrObject.reduce((accumalator,currentValue) => {
-			console.log('accumalator', accumalator);
-			console.log('currentValue',currentValue);
-			return {
-				...accumalator,
-				...currentValue
-			}
-		}, []);
+      // Cho mảng arrObject => tạo thành 1 Object {name: "ABC", job: "CEO", age: 30}
+      const arrObject = [
+        {
+          name: "ABC",
+        },
+        {
+          job: "CEO",
+        },
+        {
+          age: 30,
+        },
+      ];
 
-		console.log(newObj);
+      const newObj = arrObject.reduce((accumalator, currentValue) => {
+        console.log("accumalator", accumalator);
+        console.log("currentValue", currentValue);
+        return {
+          ...accumalator,
+          ...currentValue,
+        };
+      }, []);
 
-		// Tương tác Object thường
-		console.log('===========================Tương tác Object thường==============================');
-		const obj = {
-			name: 'ABC',
-			job: 'CEO',
-			age: 30
-		};
+      console.log("Tương tác vs arrObject", newObj);
 
-		//console.log( Object.keys(obj));
+      // Tương tác Object thường
+      console.log(
+        "===========================Tương tác Object thường=============================="
+      );
+      const obj = {
+        name: "ABC",
+        job: "CEO",
+        age: 30,
+      };
 
-		const result = Object.keys(obj).reduce((accumalator, key) => {
-			console.log('accumalator: ', accumalator);
-			console.log('key: ',key);
-			return accumalator += obj[key];
-		}, '');
-		console.log(result);
+      //console.log( Object.keys(obj));
 
-		console.log('=========================== Trải phẳng 1 mảng chứa nhiều mảng con ==============================');
-		const flattened = [[0,1],[2,3],[6,9]];
-		const result2 = flattened.reduce((acc,val) => acc.concat(val), []);
-		console.log(result2);
+      const result = Object.keys(obj).reduce((accumalator, key) => {
+        console.log("accumalator: ", accumalator);
+        console.log("key: ", key);
+        return (accumalator += obj[key]);
+      }, "");
+      console.log(result);
 
-		console.log('=========================== Đếm số lần xuất hiện của phần tử trong mảng ==============================');
+      console.log(
+        "=========================== Trải phẳng 1 mảng chứa nhiều mảng con =============================="
+      );
+      const flattened = [
+        [0, 1],
+        [2, 3],
+        [6, 9],
+      ];
+      const result2 = flattened.reduce((acc, val) => acc.concat(val), []);
+      console.log(result2);
 
+      console.log(
+        "=========================== Đếm số lần xuất hiện của phần tử trong mảng =============================="
+      );
+    }
+  </script>
 
-
-	}
-
-
-
-</script>
-
-<body onload="runABC()">
-	Map-reduce-filter
-</body>
-
+  <body onload="runABC()">
+    Map-reduce-filter
+  </body>
 </html>
