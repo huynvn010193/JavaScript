@@ -13,3 +13,5 @@ Câu hỏi PV tiếng anh: https://dev.to/suprabhasupi/frontend-interview-questi
 
 Reducer
 https://viblo.asia/p/reduce-javascript-Eb85oxW0K2G
+
+Link hay: https://topdev.vn/blog/nhung-ham-javascript-hay-su-dung-ma-ban-nen-nho-phan-2/
