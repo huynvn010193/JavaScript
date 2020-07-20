@@ -38,7 +38,7 @@
 
       // Tương tác vs arrObject
       console.log(
-        "===========================Tương tác vs arrObject=============================="
+        "===========================Tương tác vs arrObject: từ mảng Obj thành 1 Obj=============================="
       );
 
       // Cho mảng arrObject => tạo thành 1 Object {name: "ABC", job: "CEO", age: 30}
@@ -54,6 +54,8 @@
         },
       ];
 
+      console.log("Trước khi dùng Reduce", arrObject);
+
       const newObj = arrObject.reduce((accumalator, currentValue) => {
         console.log("accumalator", accumalator);
         console.log("currentValue", currentValue);
@@ -67,13 +69,15 @@
 
       // Tương tác Object thường
       console.log(
-        "===========================Tương tác Object thường=============================="
+        "===========================Tương tác Object thường: Nối các value của Object thành chuỗi=============================="
       );
       const obj = {
         name: "ABC",
         job: "CEO",
         age: 30,
       };
+
+      console.log("Object trước khi dùng reducer", obj);
 
       //console.log( Object.keys(obj));
 
@@ -82,10 +86,13 @@
         console.log("key: ", key);
         return (accumalator += obj[key]);
       }, "");
-      console.log(result);
+      console.log("Chuỗi sau khi dùng reducer:", result);
 
       console.log(
-        "=========================== Trải phẳng 1 mảng chứa nhiều mảng con =============================="
+        "=========================== Trải phẳng 1 mảng chứa nhiều mảng con:=============================="
+      );
+      console.log(
+        "=========================== Gôm các phần tử trong mảng lại thành 1 mảng.:=============================="
       );
       const flattened = [
         [0, 1],
