@@ -151,7 +151,41 @@
         { postID: "id3", title: "title3" },
         { postID: "id4", title: "title4" },
       ];
+    
+    /*=====================================================*/
+    console.log(
+    "==== Tìm phần tử dài nhất trong mảng ====="
+    );
+
+    // output : frontend
+    const listWord = ["love", "easy", "frontend"];
+    console.log("Cho mảng sau: ", listWord);
+    const findTheLongestWord = (wordList) => {
+      // Kiểm tra có phải là mảng hay không hoặc mảng đó có giá trị hay không.
+      if (!Array.isArray(wordList) || wordList.length === 0) return null;
+      return wordList.reduce((theLongestWord, currentWord) => {
+        return theLongestWord.length > currentWord.length ? theLongestWord : currentWord;
+      }, wordList[0]);
     }
+    const wordLongest = findTheLongestWord(listWord);
+    console.log("Kết quả", wordLongest);
+    }
+
+    /*=====================================================*/
+    console.log(
+    "==== Chuyển đổi mảng thành Object ====="
+    );
+    const itemList = [
+      {id: 'key1', value:'Supperman'},
+      {id: 'key2', value:'Wonder Woman'},
+      {id: 'key3', value:'Spider Man'},
+    ]
+
+    console.log("Trước convert", itemList);
+
+    const itemMap = itemList.reduce((acc,curr) => {
+      acc = {curr.id : curr.value};
+    },{})
   </script>
 
   <body onload="runABC()">
