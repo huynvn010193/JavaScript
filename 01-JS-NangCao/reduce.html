@@ -99,12 +99,58 @@
         [2, 3],
         [6, 9],
       ];
+      console.log("Mảng ban đầu: ", flattened);
       const result2 = flattened.reduce((acc, val) => acc.concat(val), []);
       console.log(result2);
 
       console.log(
         "=========================== Đếm số lần xuất hiện của phần tử trong mảng =============================="
       );
+      const names = ["Alice", "Bob", "Tiff", "Bruce", "Alice"];
+      console.log("Cho mảng như sau", names);
+      const countedName = names.reduce((allNames, name) => {
+        if (name in allNames) allNames[name]++;
+        else allNames[name] = 1;
+        return allNames;
+      }, {});
+      console.log("Kết quả", countedName);
+
+      console.log(
+        "=========================== Ứng dụng reduce chuyển mảng 2 chiều thành mảng 1 chiều =============================="
+      );
+      const topics = [
+        {
+          topic: "ReactJS",
+          posts: [
+            { postID: "id1", title: "title1" },
+            { postID: "id2", title: "title2" },
+          ],
+        },
+        {
+          topic: "Vue.js",
+          posts: [
+            { postID: "id3", title: "title3" },
+            { postID: "id4", title: "title4" },
+          ],
+        },
+      ];
+      console.log("Cho mảng như sau", topics);
+
+      const arrConvert = topics.reduce((acc, val) => {
+        return [...acc, ...val.posts];
+      }, []);
+
+      console.log("Kết quả", arrConvert);
+
+      console.log(
+        "==== Ứng dụng: Chuyển array thành object theo giá trị của một thuộc tính ====="
+      );
+      const posts = [
+        { postID: "id1", title: "title1" },
+        { postID: "id2", title: "title2" },
+        { postID: "id3", title: "title3" },
+        { postID: "id4", title: "title4" },
+      ];
     }
   </script>
 
