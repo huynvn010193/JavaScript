@@ -145,12 +145,29 @@
       console.log(
         "==== Ứng dụng: Chuyển array thành object theo giá trị của một thuộc tính ====="
       );
+      // Cho mảng sau:
       const posts = [
         { postID: "id1", title: "title1" },
         { postID: "id2", title: "title2" },
         { postID: "id3", title: "title3" },
         { postID: "id4", title: "title4" },
       ];
+      // Viết hàm getPosts : 
+      // + getPost("id1", posts).title => title 1;
+      // + getPost("id2", posts).title => title 2;
+      // + getPost("id3", posts).title => title 3;
+
+      const getPosts = (id,posts) => {
+        let a;
+        const itemGet = posts.map((item,index) => {
+          if(id === item.postID) {
+            a = item
+          }
+        });
+        return a;
+      }
+      
+      console.log(getPosts("id1",posts).title);
 
       /*=====================================================*/
       console.log("==== Tìm phần tử dài nhất trong mảng =====");
