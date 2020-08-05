@@ -146,6 +146,14 @@
         "==== Ứng dụng: Chuyển array thành object theo giá trị của một thuộc tính ====="
       );
       // Cho mảng sau:
+      // Biến đổi mảng posts thành
+      // const dictionary = {
+      //   id1: { postID: "id1", title: "title1" },
+      //   id2: { postID: "id2", title: "title2" },
+      //   id3: { postID: "id3", title: "title3" },
+      //   id4: { postID: "id4", title: "title4" }
+      // };
+
       const posts = [
         { postID: "id1", title: "title1" },
         { postID: "id2", title: "title2" },
@@ -168,6 +176,18 @@
       }
       
       console.log(getPosts("id1",posts).title);
+
+      const dictionary = posts.reduce((acc, curr) => {
+        acc[curr.postID] = curr;
+        return acc;
+      }, {});
+
+      const getPost = (postID, dictionary) => {
+        return dictionary[postID];
+      };
+
+      getPost("id1", dictionary).title;
+      console.log("runABC -> getPost:", getPost("id1", dictionary).title);
 
       /*=====================================================*/
       console.log("==== Tìm phần tử dài nhất trong mảng =====");
