@@ -145,6 +145,7 @@
       console.log(
         "==== Ứng dụng: Chuyển array thành object theo giá trị của một thuộc tính ====="
       );
+      // Cho mảng sau:
       // Biến đổi mảng posts thành
       // const dictionary = {
       //   id1: { postID: "id1", title: "title1" },
@@ -159,6 +160,22 @@
         { postID: "id3", title: "title3" },
         { postID: "id4", title: "title4" },
       ];
+      // Viết hàm getPosts : 
+      // + getPost("id1", posts).title => title 1;
+      // + getPost("id2", posts).title => title 2;
+      // + getPost("id3", posts).title => title 3;
+
+      const getPosts = (id,posts) => {
+        let a;
+        const itemGet = posts.map((item,index) => {
+          if(id === item.postID) {
+            a = item
+          }
+        });
+        return a;
+      }
+      
+      console.log(getPosts("id1",posts).title);
 
       const dictionary = posts.reduce((acc, curr) => {
         acc[curr.postID] = curr;
