@@ -9,16 +9,29 @@ for (let i = 0; i < numArr.length; i++) {
 
 total = 0;
 total = numArr.reduce((accmalator, currentValue) => {
-  // console.log(`accmalator: ${accmalator} - currentValue: ${currentValue}`);
   return accmalator + currentValue;
+}, 0);
+
+console.log("total", total);
+
+// Bài tập 3: Tìm phần tử lớn nhất trong mảng.
+const numberArr = [1, 22, 9, 4];
+// C1: sắp xếp -> rồi in ra phần tử đầu tiên
+const findMax = numberArr.sort((a, b) => {
+  return b - a;
 });
 
-// console.log(`Reduce: ${total}`);
+console.log(findMax[0]);
 
-// Tương tác với array Object
-const arrObj = [
+// C2 : dùng reducer:
+const findMaxRd = numberArr.reduce((acc, it) => (acc > it ? acc : it), 0);
+
+console.log(findMaxRd);
+
+// Bài tập 5: Từ mảng những Obj => Obj.
+const arrObject = [
   {
-    name: "An Vu",
+    name: "ABC",
   },
   {
     job: "CEO",
@@ -28,20 +41,11 @@ const arrObj = [
   },
 ];
 
-const newObject = arrObj.reduce((accmalator, currentValue) => {
-  // console.log(accmalator);
-  // console.log(currentValue);
+const newObjArrObj = arrObject.reduce((acc, it) => {
   return {
-    ...accmalator,
-    ...currentValue,
+    ...acc,
+    ...it,
   };
-});
+}, {});
 
-console.log(newObject);
-
-// Tương tác với object
-const obj = {
-  name: "An Vu",
-  job: "CEO",
-  age: 30,
-};
+console.log("newObjArrObj", newObjArrObj);
