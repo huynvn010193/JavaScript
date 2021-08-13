@@ -34,7 +34,6 @@ function matrixElementsSum(matrix) {
 
 function matrixElementsSum_2(matrix) {
   for (var r = 0, j = 0; j < matrix[0].length; j++) {
-    console.log("r", { r, j });
     for (var i = 0; i < matrix.length; i++) {
       if (matrix[i][j] === 0) break;
       else r += matrix[i][j];
@@ -50,3 +49,19 @@ const a = matrixElementsSum([
 ]);
 
 /**==========================matrixElementsSum============================== */
+/**==========================plusMinus - HK============================== */
+function plusMinus(arr) {
+  const lengthArry = arr.length;
+  const totalNegativeNum = arr.filter((it) => it < 0).length / lengthArry;
+  const totalEqualNum = arr.filter((it) => it === 0).length / lengthArry;
+  const totalPositiveNum = arr.filter((it) => it > 0).length / lengthArry;
+  return [
+    +totalPositiveNum.toPrecision(6) * 1,
+    (Math.round(totalPositiveNum * 1e2) / 1e2).toFixed(6),
+    totalEqualNum.toPrecision(6),
+    totalNegativeNum.toPrecision(6),
+  ];
+}
+
+const resultPlusMinus = plusMinus([1, 2, 3, -1, -2, -3, 0, 0]);
+console.log("🚀 ~ file: bt.js ~ line 62 ~ resultPlusMinus", resultPlusMinus);
