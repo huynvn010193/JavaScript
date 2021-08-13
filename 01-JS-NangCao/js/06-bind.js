@@ -4,8 +4,12 @@ this.lastName = "Thu";
 const teacher = {
   firstName: "Minh",
   lastName: "Thảo",
-  getFullName() {
+  getFullName(data1, data2) {
+    console.log(data1, data2);
     return `${this.firstName} ${this.lastName}`;
+  },
+  getFullNameBtn(data1, data2) {
+    console.log(`${this.firstName} ${this.lastName}`);
   },
 };
 
@@ -26,5 +30,9 @@ const getTeacherName2 = teacher.getFullName.bind(teacher); // tạo ra 1 hàm m�
 console.log("getTeacherName2", getTeacherName2());
 
 // case 3
-const getTeacherName3 = teacher.getFullName.bind(student);
+const getTeacherName3 = teacher.getFullName.bind(student, "huy", "nguyen");
 console.log("getTeacherName3", getTeacherName3());
+
+// case 4. Lấy giá trị this từ bind
+const button = document.querySelector("button");
+button.onclick = teacher.getFullNameBtn.bind(teacher);
