@@ -36,3 +36,71 @@ console.log("getTeacherName3", getTeacherName3());
 // case 4. Lấy giá trị this từ bind
 const button = document.querySelector("button");
 button.onclick = teacher.getFullNameBtn.bind(teacher);
+
+// VD2:
+console.log("=============VD 2==============");
+const $ = document.querySelector.bind(document);
+const $$ = document.querySelectorAll.bind(document);
+
+console.log($("#heading").innerHTML);
+
+console.log("=============VD 3==============");
+
+// const app = (() => {
+//   const cars = ["BMW"];
+//   const root = $("#root");
+//   return {
+//     add(car) {
+//       cars.push(car);
+//     },
+//     delete(car) {
+//       car.splice(index, 1);
+//     },
+//     render() {
+//       const html = cars.map((car) => `<li>${car}</li>`).join(""); // dùng join biến mảng thành  1 chuỗi.
+//       root.innerHTML = html;
+//     },
+//   };
+// })();
+
+const app = (() => {
+  const cars = ["BMW"];
+  const root = $("#root");
+  const input = $("#input");
+  const submit = $("#submit");
+
+  return {
+    add(car) {
+      cars.push(car);
+    },
+    delete(car) {
+      car.splice(index, 1);
+    },
+    render() {
+      const html = cars
+        .map(
+          (car, index) =>
+            `<li>
+              ${car}
+              <span class="delete" data-index="${index}">&time</span>
+            </li>`
+        )
+        .join(""); // dùng join biến mảng thành  1 chuỗi.
+      root.innerHTML = html;
+    },
+    init() {
+      // handle DOM nếu viết submit.onClick = function() ... => phải đặt 1 biến _this = this Vì
+      // function ko hiểu this lấy từ init() => dùng arrow FC do ko bind this.
+      submit.onclick = () => {
+        const car = input.value;
+        this.add(car);
+        this.render();
+        input.value = null;
+        input.focus();
+      };
+      this.render();
+    },
+  };
+})();
+
+app.init();
