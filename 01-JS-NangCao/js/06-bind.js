@@ -73,8 +73,8 @@ const app = (() => {
     add(car) {
       cars.push(car);
     },
-    delete(car) {
-      car.splice(index, 1);
+    delete(index) {
+      cars.splice(index, 1);
     },
     render() {
       const html = cars
@@ -82,11 +82,20 @@ const app = (() => {
           (car, index) =>
             `<li>
               ${car}
-              <span class="delete" data-index="${index}">&time</span>
+              <span class="delete" data-index="${index}">&times</span>
             </li>`
         )
         .join(""); // dùng join biến mảng thành  1 chuỗi.
       root.innerHTML = html;
+    },
+    handleDelete(e) {
+      console.log("delete", e.target);
+      const deleteBtn = e.target.closest(".delete");
+      if (deleteBtn) {
+        const index = deleteBtn.dataset.index;
+        this.delete(index);
+        this.render();
+      }
     },
     init() {
       // handle DOM nếu viết submit.onClick = function() ... => phải đặt 1 biến _this = this Vì
@@ -98,6 +107,7 @@ const app = (() => {
         input.value = null;
         input.focus();
       };
+      root.onclick = this.handleDelete.bind(this);
       this.render();
     },
   };
