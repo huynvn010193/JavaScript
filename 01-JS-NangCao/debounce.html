@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Throttle</h1>
+    <button id="myid">Click Me</button>
+    <p>
+      Đinh nghĩa Debounce: Trong khoản thời gian đã chỉ định, chỉ thực thi hàm 1
+      lần duy nhất
+    </p>
+  </body>
+  <script>
+    const debounce = (fn, delay) => {
+      let timeoutID;
+      return (...arg) => {
+        if (timeoutID) {
+          clearTimeout(timeoutID);
+        }
+        timeoutID = setTimeout(() => {
+          return fn(...arg);
+        }, delay);
+      };
+    };
+    document.getElementById("myid").addEventListener(
+      "click",
+      debounce((e) => {
+        console.log("click me");
+      }, 1000)
+    );
+  </script>
+</html>
