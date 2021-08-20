@@ -64,4 +64,18 @@ function plusMinus(arr) {
 }
 
 const resultPlusMinus = plusMinus([1, 2, 3, -1, -2, -3, 0, 0]);
-console.log("🚀 ~ file: bt.js ~ line 62 ~ resultPlusMinus", resultPlusMinus);
+// console.log("🚀 ~ file: bt.js ~ line 62 ~ resultPlusMinus", resultPlusMinus);
+
+/**==========================Staircase-HK============================== */
+// n = 4
+/**
+  #
+  ##
+  ###
+  ####
+*/
+function staircase(n) {
+  for (let i = 0; i < n; i++) {
+    console.log(" ".repeat(n - i) + "#".repeat(i));
+  }
+}
