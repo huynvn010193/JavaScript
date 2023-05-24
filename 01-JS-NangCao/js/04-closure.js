@@ -44,6 +44,7 @@ const createStore = (key) => {
 
 //Profile.js
 const profilteSetting = createStore("profile_setting");
-console.log(profilteSetting.get("fullName"));
 // profilteSetting.set("fullName", "Huy Nguyen");
-profilteSetting.remove("fullName", "Huy Nguyen");
+// console.log(profilteSetting.get("fullName"));
+
+profilteSetting.remove("fullName");
